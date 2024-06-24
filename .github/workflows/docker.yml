@@ -29,7 +29,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push CPU image
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: utils/docker/Dockerfile-cpu
@@ -37,7 +37,7 @@ jobs:
           tags: ultralytics/yolov5:latest-cpu
 
       - name: Build and push GPU image
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: utils/docker/Dockerfile
@@ -45,7 +45,7 @@ jobs:
           tags: ultralytics/yolov5:latest
 
       - name: Build and push arm64 image
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           context: .
           platforms: linux/arm64
